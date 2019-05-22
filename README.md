@@ -40,5 +40,11 @@ Code for the Design Patterns in Modern C++ course from Udemy.
   - Template Method
   - Visitor
   
+## Building
 
-
+```bash
+mkdir -p build && cd build
+cmake .. -DCMAKE_INSTALL_PREFIX=../install && make
+ctest --output-on-failure
+make install
+```
