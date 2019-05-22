@@ -25,7 +25,8 @@ Subtypes should be inmediatly substitutable by their base types.
 
 ### Interface Segregation
 
-Don't force implementers to code too large interfaces.
+Avoid putting too much into a single interface. Don't force
+implementers to code too large interfaces.
 
 - Partial implementers contain dummy methods and extra code.
 - Partial implementers give a wrong API to the user.
@@ -33,5 +34,9 @@ Don't force implementers to code too large interfaces.
 
 ### Dependency Inversion
 
+A. High-level modules should not depend on low-level modules. Both should depend on abstractions.
+B. Abstractions should not depend on details. Details should depend on abstractions.
+
+- Prefer depending on abstractions (abstract and interfaces) rather than specific classes. *Avoid depending on the implementation details *.
 
 
