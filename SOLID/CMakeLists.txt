@@ -1,2 +1,4 @@
 project(solid)
 add_subdirectory(single_responsibility)
+add_subdirectory(open_closed)
+add_subdirectory(liskov_substitution)
