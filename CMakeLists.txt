@@ -3,3 +3,4 @@ project(cpp_design_patterns)
 
 enable_testing()
 add_subdirectory(SOLID)
+add_subdirectory(Creational)

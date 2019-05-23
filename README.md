@@ -4,10 +4,30 @@ Code for the Design Patterns in Modern C++ course from Udemy.
 
 ## Overview
 
-- Design patterns are common architectural approaches.
-- Popularized by the Gang of Four book (1994) for Smalltalk and C++.
+Design patterns are common architectural approaches. They were popularized by the Gang of Four book (1994) for Smalltalk and C++.
 
-## Contents
+## Gamma Categorization
+
+Design Patterns are tipically split into three categories. This is called *Gamma Categorization* after Erich Gamma, one of the GoF authors.
+
+### Creational Patterns
+
+- Deal with the creation of objects.
+- Explicit vs. Implicit: Constructor vs. [Dependency Injection, reflection, ...].
+- Wholesale vs. piecewise initialization.
+
+### Structural Patterns
+
+- Concerned with the structure (e.g., class members).
+- Many patterns are wrapers that mimic the underlying class interface.
+- Stress the importance of godd API design. **Make API usable for other people**.
+
+### Behavioral Patterns
+
+- They are all different; no central theme.
+- They solve particular problems.
+
+## Principles and Patterns
 
 + [SOLID Principles](SOLID/README.md)
   - Single Responsibility Principle
@@ -44,7 +64,7 @@ Code for the Design Patterns in Modern C++ course from Udemy.
 
 ```bash
 mkdir -p build && cd build
-cmake .. -DCMAKE_INSTALL_PREFIX=../install && make
+cmake .. -DCMAKE_INSTALL_PREFIX=../bin && make
 ctest --output-on-failure
 make install
 ```
