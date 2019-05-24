@@ -43,8 +43,32 @@ Object creation logic is too complex for a single constructor. We want to avoid 
 
 **Abstract Factory**: Hierarchy of factories that handle the creation of a hierarchy of objects.
 
-
-
 ## Prototype
 
+**Allows replicating a complex object**
+
+- A prototype is a partially or fully initialized object that we (deep)copy and make use of. 
+- The cloning process is made through a convenient tool (e.g., via a Factory).
+
+**Prototype Factory**: Provides a factory that creates objects from a prototype. This can be extended, by forcing the creation of an object through the prototype, hiding the constructors.
+
+**Prototype vie deep copy**: Implements a `deep_copy` or `clone` method on each object.
+
+**Prototype via serialization**: Serialization is an alternative to make deep copies of an object. This way we do not write copy constructors, but we need to provide (de)serialization methods. 
+- We get serialization and prototype functionality at once.
+- This way, it is imposible to mess up the copy constructors!.
+
 ## Singleton
+
+> When discussing which patterns to drop, we found that we
+> still love them all. (Not really. I'm in favor of dropping
+> Singleton. Its use is almost always a design smell.) 
+> -- <cite>Erich Gamma</cite>
+
+**Prevents the creation of additional copies of an instance**
+
+For some components it only makes sense to have one instance in the system (e.g., database, factories). Contructor calls can be expensive, so we provide everyone with the same instance.
+
+
+
+ 

@@ -35,8 +35,8 @@ They are tipically split into three categories. This is called *Gamma Categoriza
   - [Dependency Inversion](./SOLID/README.md#dependency-inversion)
 + [Creational Patterns](./Creational/README.md)
   - [Builder](./Creational/README.md#builder)
-  - Factories
-  - Prototype
+  - [Factory](./Creational/README.md#factory)
+  - [Prototype](./Creational/README.md#prototype)
   - Singleton
 + [Structural Patterns](./Structural/README.md)
   - Adapter
