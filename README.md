@@ -2,13 +2,9 @@
 
 Code for the Design Patterns in Modern C++ course from Udemy.
 
-## Overview
-
 Design patterns are common architectural approaches. They were popularized by the Gang of Four book (1994) for Smalltalk and C++.
 
-## Gamma Categorization
-
-Design Patterns are tipically split into three categories. This is called *Gamma Categorization* after Erich Gamma, one of the GoF authors.
+They are tipically split into three categories. This is called *Gamma Categorization* after Erich Gamma, one of the GoF authors.
 
 ### Creational Patterns
 
@@ -29,25 +25,25 @@ Design Patterns are tipically split into three categories. This is called *Gamma
 
 ## Principles and Patterns
 
-+ [SOLID Principles](SOLID/README.md)
++ [SOLID Principles](./SOLID/README.md)
   - Single Responsibility Principle
   - Open-Closed Principle
   - Liskov Substitution Principle
   - Interface Segregation Principle
   - Dependency Inversion Principle
-+ [Creational Patterns](creational/README.md)
-  - [Builder](creational/README.md#Builder)
++ [Creational Patterns](./Creational/README.md)
+  - [Builder](./Creational/README.md#Builder)
   - Factories
   - Prototype
   - Singleton
-+ [Structural Patterns](structural/README.md)
++ [Structural Patterns](./Structural/README.md)
   - Adapter
   - Composite
   - Decorator
   - Facade
   - Flyweight
   - Proxy
-+ [Behavioral Patterns](behavioral/README.md)
++ [Behavioral Patterns](./Behavioral/README.md)
   - Chain of Responsibility
   - Command
   - Interpreter
