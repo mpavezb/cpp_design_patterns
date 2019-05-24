@@ -36,7 +36,7 @@ Design Patterns are tipically split into three categories. This is called *Gamma
   - Interface Segregation Principle
   - Dependency Inversion Principle
 + [Creational Patterns](creational/README.md)
-  - Builder
+  - [Builder](creational/README.md#Builder)
   - Factories
   - Prototype
   - Singleton
