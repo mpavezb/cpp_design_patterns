@@ -2,20 +2,18 @@
 
 Useful principles of Obejct Oriented Design. These were introduced by Uncle Bob (Robert C. Martin).
 
-## The SOLID Principles
+## Single Responsibility
 
-### Single Responsibility
+A class should have a single reason to change. - **Separation of Concerns** 
 
-**Separation of Concerns**: A class should have a single reason to change. 
-
-### Open-Closed
+## Open-Closed
 
 The system should be **open to extension and closed to modification**.
 
 - We want to avoid modifying code that already works.
 - Extension can be done by inheritance.
 
-### Liskov Substitution
+## Liskov Substitution
 
 Subtypes should be inmediatly substitutable by their base types.
 
@@ -23,7 +21,7 @@ Subtypes should be inmediatly substitutable by their base types.
   when a Derived instance is used.
 - Named after Robert Liskov.
 
-### Interface Segregation
+## Interface Segregation
 
 Avoid putting too much into a single interface. Don't force
 implementers to code too large interfaces.
@@ -31,8 +29,7 @@ implementers to code too large interfaces.
 - Partial implementers contain dummy methods and extra code.
 - Partial implementers give a wrong API to the user.
 
-
-### Dependency Inversion
+## Dependency Inversion
 
 A. High-level modules should not depend on low-level modules. Both should depend on abstractions.
 B. Abstractions should not depend on details. Details should depend on abstractions.
