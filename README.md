@@ -4,6 +4,8 @@ Code for the Design Patterns in Modern C++ course from Udemy.
 
 Design patterns are common architectural approaches. They were popularized by the Gang of Four book (1994) for Smalltalk and C++.
 
+## Gamma Categorization
+
 They are tipically split into three categories. This is called *Gamma Categorization* after Erich Gamma, one of the GoF authors.
 
 ### Creational Patterns
@@ -56,7 +58,7 @@ They are tipically split into three categories. This is called *Gamma Categoriza
   - Template Method
   - Visitor
   
-## Building
+## Building the code
 
 ```bash
 mkdir -p build && cd build
