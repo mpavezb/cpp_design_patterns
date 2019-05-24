@@ -16,11 +16,13 @@
 
 Instead of building the object from scratch, the builder creates object oriented structures that represent each element involved.
 
+Tips:
+- You can give the builder a constructor or return it via a static function from the object you are trying to build.
+- Hide object constructors to force the use of the builder.
+
 ### Fluent Builder
 
 Chains builder calls and avoid extra code.
-
-- Hide object constructors to force the use of the builder.
 - Chaining can be done using a reference or a pointer API.
 - Use Create and Build methods, before and after chaining.
 

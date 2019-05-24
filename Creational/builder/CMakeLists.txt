@@ -15,3 +15,7 @@ install(TARGETS groovy_builder DESTINATION Creational/${PROJECT_NAME})
 # builder facade
 add_executable(builder_facade facade/main.cpp facade/Person.cpp facade/PersonBuilder.cpp)
 install(TARGETS builder_facade DESTINATION Creational/${PROJECT_NAME})
+
+# udemy exercise
+add_executable(exercise exercise.cpp)
+install(TARGETS exercise DESTINATION Creational/${PROJECT_NAME})
