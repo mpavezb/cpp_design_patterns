@@ -26,13 +26,13 @@ They are tipically split into three categories. This is called *Gamma Categoriza
 ## Principles and Patterns
 
 + [SOLID Principles](./SOLID/README.md)
-  - Single Responsibility Principle
-  - Open-Closed Principle
-  - Liskov Substitution Principle
-  - Interface Segregation Principle
-  - Dependency Inversion Principle
+  - [Single Responsibility](./SOLID/README.md#single-responsibility)
+  - [Open-Closed](./SOLID/README.md#open-closed)
+  - [Liskov Substitution](./SOLID/README.md#liskov-substitution)
+  - [Interface Segregation](./SOLID/README.md#interface-segregation)
+  - [Dependency Inversion](./SOLID/README.md#dependency-inversion)
 + [Creational Patterns](./Creational/README.md)
-  - [Builder](./Creational/README.md#Builder)
+  - [Builder](./Creational/README.md#builder)
   - Factories
   - Prototype
   - Singleton
