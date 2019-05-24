@@ -3,7 +3,7 @@
 ## Overview
 
 - [Builder](#Builder): Provides an API for constructing an object step-by-step.
-- [Factories](#Factories):
+- [Factory](#Factory):
 - [Prototype](#Prototype):
 - [Singleton](#Singleton):
 
@@ -28,7 +28,22 @@ Instead of building the object from scratch, the builder creates object oriented
 
 **Builder Facade**: This pattern help us to split a complex builder into several simpler builder classes, which can also be chained.
 
-## Factories
+
+## Factory
+
+**A component responsible solely for the wholesale (not piecewise) creation of objects**
+
+Object creation logic is too complex for a single constructor. We want to avoid multiple complex constructors and optional parameters. Outsource object creation logic (non-piecewise, unlike Builder).
+
+**Factory Method**: Provide static methods to build the object.
+
+**Factory**: Provide the factory as a separate class as an alternative for construction.
+
+**Inner Factory**: Force the use of the factory while providing a cleaner API.
+
+**Abstract Factory**: Hierarchy of factories that handle the creation of a hierarchy of objects.
+
+
 
 ## Prototype
 

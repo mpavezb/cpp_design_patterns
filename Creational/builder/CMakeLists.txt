@@ -17,5 +17,5 @@ add_executable(builder_facade facade/main.cpp facade/Person.cpp facade/PersonBui
 install(TARGETS builder_facade DESTINATION Creational/${PROJECT_NAME})
 
 # udemy exercise
-add_executable(exercise exercise.cpp)
-install(TARGETS exercise DESTINATION Creational/${PROJECT_NAME})
+add_executable(builder_exercise exercise.cpp)
+install(TARGETS builder_exercise DESTINATION Creational/${PROJECT_NAME})
