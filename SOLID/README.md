@@ -34,6 +34,6 @@ implementers to code too large interfaces.
 A. High-level modules should not depend on low-level modules. Both should depend on abstractions.
 B. Abstractions should not depend on details. Details should depend on abstractions.
 
-- Prefer depending on abstractions (abstract and interfaces) rather than specific classes. *Avoid depending on the implementation details *.
+- Prefer depending on abstractions (abstract and interfaces) rather than specific classes. *Avoid depending on the implementation details*.
 
 
