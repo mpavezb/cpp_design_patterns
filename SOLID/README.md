@@ -2,6 +2,25 @@
 
 Useful principles of Obejct Oriented Design. These were introduced by Uncle Bob (Robert C. Martin).
 
+
+## STUPID vs SOLID
+
+|:---:|:-----------------------|
+|  S  | Singleton              |
+|  T  | Tight Coupling         |
+|  U  | Untestability          |
+|  P  | Premature Optimization |
+|  I  | Indescriptive Naming   |
+|  D  | Duplication            |
+
+|:---:|:--------------------|
+|  S  |Single Responsibility|
+|  O  |Open-close           |
+|  L  |Liskov substitution  |
+|  I  |Interface segregation|
+|  D  |Dependency inversion |
+
+
 ## Single Responsibility
 
 A class should have a single reason to change. - **Separation of Concerns** 

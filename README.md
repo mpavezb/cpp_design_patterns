@@ -37,26 +37,26 @@ They are tipically split into three categories. This is called *Gamma Categoriza
   - [Builder](./Creational/README.md#builder)
   - [Factory](./Creational/README.md#factory)
   - [Prototype](./Creational/README.md#prototype)
-  - Singleton
+  - [Singleton](./Creational/README.md#singleton)
 + [Structural Patterns](./Structural/README.md)
-  - Adapter
-  - Composite
-  - Decorator
-  - Facade
-  - Flyweight
-  - Proxy
+  - [Adapter](./Structural/README.md#adapter)
+  - [Composite](./Structural/README.md#composite)
+  - [Decorator](./Structural/README.md#decorator)
+  - [Facade](./Structural/README.md#facade)
+  - [Flyweight](./Structural/README.md#flyweight)
+  - [Proxy](./Structural/README.md#proxy)
 + [Behavioral Patterns](./Behavioral/README.md)
-  - Chain of Responsibility
-  - Command
-  - Interpreter
-  - Iterator
-  - Mediator
-  - Memento
-  - Observer
-  - State
-  - Strategy
-  - Template Method
-  - Visitor
+  - [Chain of Responsibility](./Behavioral/README.md#chain-of-responsibility)
+  - [Command](./Behavioral/README.md#command)
+  - [Interpreter](./Behavioral/README.md#interpreter)
+  - [Iterator](./Behavioral/README.md#iterator)
+  - [Mediator](./Behavioral/README.md#mediator)
+  - [Memento](./Behavioral/README.md#memento)
+  - [Observer](./Behavioral/README.md#observer)
+  - [State](./Behavioral/README.md#state)
+  - [Strategy](./Behavioral/README.md#strategy)
+  - [Template Method](./Behavioral/README.md#template-method)
+  - [Visitor](./Behavioral/README.md#visitor)
   
 ## Building the code
 

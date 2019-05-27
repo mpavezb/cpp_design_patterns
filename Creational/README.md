@@ -3,9 +3,9 @@
 ## Overview
 
 - [Builder](#Builder): Provides an API for constructing an object step-by-step.
-- [Factory](#Factory):
-- [Prototype](#Prototype):
-- [Singleton](#Singleton):
+- [Factory](#Factory): Contruct complex objects in a wholesale way.
+- [Prototype](#Prototype): Allows deep copy of prototype objects.
+- [Singleton](#Singleton): Forces the use of a single instance of an object.
 
 
 ## Builder
@@ -69,6 +69,21 @@ Object creation logic is too complex for a single constructor. We want to avoid 
 
 For some components it only makes sense to have one instance in the system (e.g., database, factories). Contructor calls can be expensive, so we provide everyone with the same instance.
 
+**Making a safe singleton**:
+- Hide/delete the constructor, copy ctor and copy assignment operators.
+- Create a static method that returns a reference to a static member.
+- C++11 gives guarantees thread safe initialization of static members.
+
+**Testability Issues**: When using a singleton to manage a resource (e.g., database), we cannot run unit test for that class, because the tests will depend on the real resource, which can change anytime!. This can be fixed with Dependency Injection, creating a interface to mock up the real resource with something suitable for testing.
+
+**Singleton based in a DI Container**: A DI (Dependency Injection) or IoC (Inversion of Control) Container helps us to manage the lifetime of objects inside the application. This is particularily helpful, as we avoid coding the boilerplate constraints.
+
+**Monostate Singleton**: *NOT RECOMMENDED*. The singleton is only implemented partially. The object itself is not a singleton, but only the fields used to manage the resource are kept `static`. This is a bad, because gives a wrong idea to the user of the API about how the object really works. Different instances will manage the same resource.
+
+**Multiton**: Provides a factory to create multiple singletons for a class, based on specific keys. For example, it allows to create singletons based on levels of priority.
 
 
- 
+
+
+
+
