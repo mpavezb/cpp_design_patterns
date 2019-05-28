@@ -14,7 +14,7 @@
 
 **Getting the interface you want from the interface you have**
 
-![adapter UML](adapter/UML.png)
+![UML](adapter/UML.png)
 
 
 We cannot modify the whole API to support a specific interface, so we adapt an existing interface X to conform to the required interface Y.
@@ -24,3 +24,10 @@ We cannot modify the whole API to support a specific interface, so we adapt an e
 **by external polymorphism**: When the adaptee functionality is separated into multiple classes, the adapter can be built using pointers to each of the objects and their relevant methods.
 
 **adapter caching**: Sometimes the conversion logic requires the execution of expensive methods to transform static data. If we expect this to be executed many times, we can implement a caché.
+
+
+## Bridge
+
+**Connecting components together through abstractions.**
+
+
