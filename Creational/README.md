@@ -12,6 +12,8 @@
 
 **The builder provides an API for constructing an object step-by-step.**
 
+![UML](builder/UML.png)
+
 *Rationale*: Simple objects can be created in single constructor call, but complex objects require a lot of ceremony. We dont want a constructor with 10 arguments, so we use a piecewise construction.
 
 Instead of building the object from scratch, the builder creates object oriented structures that represent each element involved.
@@ -33,6 +35,10 @@ Instead of building the object from scratch, the builder creates object oriented
 
 **A component responsible solely for the wholesale (not piecewise) creation of objects**
 
+![UML](factory/UML_factory_method.png "Factory Method")
+![UML](factory/UML_abstract_factory.png "Abstract Factory")
+
+
 Object creation logic is too complex for a single constructor. We want to avoid multiple complex constructors and optional parameters. Outsource object creation logic (non-piecewise, unlike Builder).
 
 **Factory Method**: Provide static methods to build the object.
@@ -43,9 +49,12 @@ Object creation logic is too complex for a single constructor. We want to avoid 
 
 **Abstract Factory**: Hierarchy of factories that handle the creation of a hierarchy of objects.
 
+
 ## Prototype
 
 **Allows replicating a complex object**
+
+![UML](prototype/UML.png)
 
 - A prototype is a partially or fully initialized object that we (deep)copy and make use of. 
 - The cloning process is made through a convenient tool (e.g., via a Factory).
@@ -66,6 +75,8 @@ Object creation logic is too complex for a single constructor. We want to avoid 
 > -- <cite>Erich Gamma</cite>
 
 **Prevents the creation of additional copies of an instance**
+
+![UML](singleton/UML.png)
 
 For some components it only makes sense to have one instance in the system (e.g., database, factories). Contructor calls can be expensive, so we provide everyone with the same instance.
 
