@@ -5,6 +5,7 @@ Useful principles of Obejct Oriented Design. These were introduced by Uncle Bob 
 
 ## STUPID vs SOLID
 
+|     |                        |
 |:---:|:-----------------------|
 |  S  | Singleton              |
 |  T  | Tight Coupling         |
@@ -13,6 +14,7 @@ Useful principles of Obejct Oriented Design. These were introduced by Uncle Bob 
 |  I  | Indescriptive Naming   |
 |  D  | Duplication            |
 
+|     |                     |
 |:---:|:--------------------|
 |  S  |Single Responsibility|
 |  O  |Open-close           |
