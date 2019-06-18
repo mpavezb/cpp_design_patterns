@@ -42,7 +42,7 @@ They are tipically split into three categories. This is called *Gamma Categoriza
   - [Adapter](./Structural/README.md#adapter)
   - [Composite](./Structural/README.md#composite)
   - [Decorator](./Structural/README.md#decorator)
-  - [Facade](./Structural/README.md#facade)
+  - [Façade](./Structural/README.md#façade)
   - [Flyweight](./Structural/README.md#flyweight)
   - [Proxy](./Structural/README.md#proxy)
 + [Behavioral Patterns](./Behavioral/README.md)
