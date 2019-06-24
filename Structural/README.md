@@ -5,7 +5,7 @@
 - [Adapter](#adapter): Adapts an interface X to conform with interface Y.
 - [Composite](#composite):
 - [Decorator](#decorator):
-- [Facade](#facade):
+- [Façade](#façade):
 - [Flyweight](#flyweight):
 - [Proxy](#proxy):
 
@@ -41,6 +41,8 @@ Helps preventing a entity explosion on a *cartesian product*. Example: An object
 
 **Treating individual components and aggregate objects uniformly.**
 
+![UML](composite/UML.png)
+
 Lets us group objects to make compound objects. E.g., nodes and leaves in a tree, groups of shapes. Then the individuals and groups have a common API. Both, singlular and composed objects share a similar behavior and use the same interface.
 
 We can make use of C++ *duck typing*, expecting `begin` and `end` expressions to identify a collection.
@@ -49,6 +51,8 @@ We can make use of C++ *duck typing*, expecting `begin` and `end` expressions to
 ## Decorator
 
 **Facilitates the addition of behaviors to individual objects.**
+
+![UML](decorator/UML.png)
 
 It allows us to extend the class functionality without having to modify the internal code. Decorators can be nested.
 
@@ -60,3 +64,39 @@ It allows us to extend the class functionality without having to modify the inte
 
 
 ## Façade
+
+**Provides a simple and easy to understand user interface over a large and sophisticated body of code.**
+
+![UML](facade/UML.png)
+
+Typical systems are complex and are build on top of many subsystems we do not want to expose. We use façade to provide a limited and simpler API to the consumer. It may allow users to escalate to a more complex API if they need to.
+
+
+## Flyweight
+
+**A space optimization technique that lets us use less memory by storing externally the data associated with similar objects.**
+
+![UML](flyweight/UML.png)
+
+This pattern is already implemented as a boost library `boost::flyweight`.
+
+
+## Proxy
+
+**A class that functions as an interface to a particular resource. That resource may be remote, expensive or may require extra functionality. The original interface is kept, but functionality is modified.**
+
+![UML](proxy/UML.png)
+
+There are different types of proxies for purposes like communication, caching, logging, virtual or guarding. Smart pointers are a common example of a proxy; they encapsulate the real pointer and add lifecycle logic, resulting in a extended API.
+
+**Decorator vs. Proxy**:
+
+- Proxy provides an identical interface, but Decorator provides an enhanced interface. 
+- Decorator typically aggregates/references a base object, while the proxy can be a new object, unrelated with the base.
+
+**Property proxy**: Allows us to catch readings and assignements to the object properties, without the need of getters and setters.
+
+**Virtual proxy**: Allows us to implement lazy behavior for expensive resources.
+
+**Communication proxy**: Allows us to use a external server/process to solve a query.
+

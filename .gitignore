@@ -1,5 +1,6 @@
 build/
 bin/
+*.html
 
 # Created by https://www.gitignore.io/api/c++,cmake,emacs
 # Edit at https://www.gitignore.io/?templates=c++,cmake,emacs
