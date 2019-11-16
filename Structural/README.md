@@ -85,7 +85,7 @@ Example: Do not store name/lastname pairs for each person, just keep a table of 
 
 ## Proxy
 
-**A class that functions as an interface to a particular resource. That resource may be remote, expensive or may require extra functionality. The original interface is kept, but functionality is modified.**
+**Interface to a particular resource. That resource may be remote, expensive or may require extra functionality. Keeps the original interface, but functionality is modified.**
 
 ![UML](proxy/UML.png)
 
