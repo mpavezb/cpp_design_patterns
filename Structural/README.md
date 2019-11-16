@@ -3,11 +3,12 @@
 ## Overview
 
 - [Adapter](#adapter): Adapts an interface X to conform with interface Y.
-- [Composite](#composite):
-- [Decorator](#decorator):
-- [Façade](#façade):
-- [Flyweight](#flyweight):
-- [Proxy](#proxy):
+- [Bridge](#bridge): Connects components while decoupling their interfaces from the implementation.
+- [Composite](#composite): Treats individual components and aggregate objects uniformly.
+- [Decorator](#decorator): Extends functionality without modifying internal code.
+- [Façade](#façade): Provides simple API to large codebase.
+- [Flyweight](#flyweight): Optimizes memory usage by storing data externally for similar objects.
+- [Proxy](#proxy): Provides an extra interface to a resource, adding functionallity in between.
 
 
 ## Adapter
@@ -80,6 +81,7 @@ Typical systems are complex and are build on top of many subsystems we do not wa
 
 This pattern is already implemented as a boost library `boost::flyweight`.
 
+Example: Do not store name/lastname pairs for each person, just keep a table of names and references to it.
 
 ## Proxy
 
@@ -91,8 +93,10 @@ There are different types of proxies for purposes like communication, caching, l
 
 **Decorator vs. Proxy**:
 
-- Proxy provides an identical interface, but Decorator provides an enhanced interface. 
+- Proxy provides an identical interface, but Decorator provides an enhanced interface.
 - Decorator typically aggregates/references a base object, while the proxy can be a new object, unrelated with the base.
+- Decorator receives a reference to the augmented object, while the proxy does not.
+- Decorator supports recursive composition.
 
 **Property proxy**: Allows us to catch readings and assignements to the object properties, without the need of getters and setters.
 
