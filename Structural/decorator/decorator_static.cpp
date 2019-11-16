@@ -1,24 +1,20 @@
 #include <iostream>
-#include <string>
 #include <sstream>
+#include <string>
 
 using namespace std;
 
-struct Shape
-{
+struct Shape {
   virtual string str() const = 0;
 };
 
-struct Circle: Shape
-{
+struct Circle : Shape {
   float radius;
 
-  Circle() {};
-  Circle(float radius): radius(radius) {}
+  Circle(){};
+  Circle(float radius) : radius(radius) {}
 
-  void resize(float factor) {
-    radius *= factor;
-  }
+  void resize(float factor) { radius *= factor; }
 
   string str() const override {
     ostringstream oss;
@@ -27,16 +23,13 @@ struct Circle: Shape
   }
 };
 
-struct Square: Shape
-{
+struct Square : Shape {
   float side;
 
-  Square() {};
-  Square(float side): side(side) {}
+  Square(){};
+  Square(float side) : side(side) {}
 
-  void resize(float factor) {
-    side *= factor;
-  }
+  void resize(float factor) { side *= factor; }
 
   string str() const override {
     ostringstream oss;
@@ -45,60 +38,55 @@ struct Square: Shape
   }
 };
 
-
 ///////////////////////////////
 // Static Decorators
 ///////////////////////////////
 
 // uses Mixing inheritance (inherits from template argument)
-template <typename T> struct ColoredShape: T
-{
-  static_assert(is_base_of<Shape, T>::value, "Template argument must be a Shape");
+template <typename T> struct ColoredShape : T {
+  static_assert(is_base_of<Shape, T>::value,
+                "Template argument must be a Shape");
 
   string color;
 
   // The constructor must enable the nesting of decorators.
   ColoredShape() {}
-  
-  template <typename...Args>
-  ColoredShape(const string& color, Args ...args):
-    T(std::forward<Args>(args)...), color{color} {}
+
+  template <typename... Args>
+  ColoredShape(const string &color, Args... args)
+      : T(std::forward<Args>(args)...), color{color} {}
 
   // it is correct to override, beacause T is always going to be a Shape.
-  string str() const override
-  {
+  string str() const override {
     ostringstream oss;
     oss << T::str() << " has the color " << color;
     return oss.str();
   }
 };
 
-template <typename T> struct TransparentShape: T
-{
-  static_assert(is_base_of<Shape, T>::value, "Template argument must be a Shape");
+template <typename T> struct TransparentShape : T {
+  static_assert(is_base_of<Shape, T>::value,
+                "Template argument must be a Shape");
 
   uint8_t transparency;
 
   // The constructor must enable the nesting of decorators.
   TransparentShape() {}
-  
-  template <typename...Args>
-  TransparentShape(const uint8_t& transparency, Args ...args):
-    T(std::forward<Args>(args)...), transparency{transparency} {}
+
+  template <typename... Args>
+  TransparentShape(const uint8_t &transparency, Args... args)
+      : T(std::forward<Args>(args)...), transparency{transparency} {}
 
   // it is correct to override, beacause T is always going to be a Shape.
-  string str() const override
-  {
+  string str() const override {
     ostringstream oss;
     oss << T::str() << " has "
-        << static_cast<float>(transparency) / 255.f * 100.f
-        << "% transparency";
+        << static_cast<float>(transparency) / 255.f * 100.f << "% transparency";
     return oss.str();
   }
 };
 
-int main()
-{
+int main() {
   Square square{8};
 
   ColoredShape<Square> red_square{"red", 4};

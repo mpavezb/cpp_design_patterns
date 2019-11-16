@@ -8,27 +8,22 @@ class PersonJobBuilder;
 // That is because we do not want the person to be replicated each time.
 // So, the actual person is kept in the PersonBuilder, and each builder
 // derives from PersonBuilderBase.
-class PersonBuilderBase
-{
+class PersonBuilderBase {
 protected:
-  Person& person;
-  PersonBuilderBase(Person &person): person{person} {}
+  Person &person;
+  PersonBuilderBase(Person &person) : person{person} {}
 
 public:
-  operator Person() const
-  {
-    return std::move(person);
-  }
-  
+  operator Person() const { return std::move(person); }
+
   PersonAddressBuilder lives() const;
   PersonJobBuilder works() const;
-  
 };
 
-class PersonBuilder: public PersonBuilderBase
-{
+class PersonBuilder : public PersonBuilderBase {
 public:
-  PersonBuilder(): PersonBuilderBase{p} {}
+  PersonBuilder() : PersonBuilderBase{p} {}
+
 private:
   Person p;
 };

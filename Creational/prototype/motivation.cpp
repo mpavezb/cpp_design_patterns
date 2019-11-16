@@ -5,49 +5,45 @@
 
 using namespace std;
 
-struct Address
-{
+struct Address {
   string street, city;
   int suite;
 
-  Address(const string &street, const string &city, int suite): street(street), city(city), suite(suite) {}
+  Address(const string &street, const string &city, int suite)
+      : street(street), city(city), suite(suite) {}
 
-  friend ostream& operator<<(ostream &os, const Address &address)
-  {
-    return os << "street: " << address.street << ", city: " << address.city << ", suite: " << address.suite;
+  friend ostream &operator<<(ostream &os, const Address &address) {
+    return os << "street: " << address.street << ", city: " << address.city
+              << ", suite: " << address.suite;
   }
 };
 
-struct Contact
-{
+struct Contact {
   string name;
   Address address;
 
-  Contact(const string &name, const Address &address): name(name), address(address) {}
+  Contact(const string &name, const Address &address)
+      : name(name), address(address) {}
 
-  friend ostream& operator<<(ostream &os, const Contact &contact)
-  {
+  friend ostream &operator<<(ostream &os, const Contact &contact) {
     return os << "name: " << contact.name << ", address: " << contact.address;
   }
 };
 
-struct ContactPtr
-{
+struct ContactPtr {
   string name;
   Address *address;
 
   // who owns this pointer?
-  ContactPtr(const string &name, Address* address): name(name), address(address) {}
+  ContactPtr(const string &name, Address *address)
+      : name(name), address(address) {}
 
-  friend ostream& operator<<(ostream &os, const ContactPtr &contact)
-  {
+  friend ostream &operator<<(ostream &os, const ContactPtr &contact) {
     return os << "name: " << contact.name << ", address: " << *contact.address;
   }
 };
 
-
-int main()
-{
+int main() {
   // without prototype
   cout << endl << "Using constructor: " << endl;
   Contact john{"John Doe", Address{"123 East Dr", "London", 123}};
@@ -74,6 +70,6 @@ int main()
   jane3.address->suite = 99999;
   cout << jane3 << endl;
   cout << john2 << endl;
-  
+
   return 0;
 }

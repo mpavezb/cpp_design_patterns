@@ -1,105 +1,86 @@
-#include <iostream>
-#include <string>
-#include <map>
 #include <fstream>
+#include <iostream>
+#include <map>
+#include <string>
 
 #include <boost/lexical_cast.hpp>
 
 using namespace std;
 using namespace boost;
 
-class Database
-{
+class Database {
 public:
-  virtual int get_population(const string& name) = 0;
+  virtual int get_population(const string &name) = 0;
 };
 
-class SingletonDatabase: Database
-{
+class SingletonDatabase : Database {
 private:
   // private constructor
-  SingletonDatabase()
-  {
+  SingletonDatabase() {
     cout << "Initializing the database" << endl;
     ifstream ifs("capitals.txt");
 
     string s, s2;
-    while (getline(ifs, s))
-    {
+    while (getline(ifs, s)) {
       getline(ifs, s2);
       int pop = lexical_cast<int>(s2);
       capitals[s] = pop;
     }
   }
   map<string, int> capitals;
+
 public:
   // avoid copies of the singleton
-  SingletonDatabase(const SingletonDatabase&) = delete;
-  void operator=(const SingletonDatabase&) = delete;
+  SingletonDatabase(const SingletonDatabase &) = delete;
+  void operator=(const SingletonDatabase &) = delete;
 
   // provide static method to access the instance.
-  static SingletonDatabase& get()
-  {
+  static SingletonDatabase &get() {
     static SingletonDatabase db;
     return db;
   }
 
-  int get_population(const string& name)
-  {
-    return capitals[name];
-  }
+  int get_population(const string &name) { return capitals[name]; }
 };
 
-
-class DummyDatabase: public Database
-{
+class DummyDatabase : public Database {
   map<string, int> capitals;
+
 public:
-  DummyDatabase()
-  {
+  DummyDatabase() {
     capitals["alpha"] = 1;
     capitals["beta"] = 2;
     capitals["gamma"] = 3;
   }
-  
-  int get_population(const string& name) override
-  {
-    return capitals[name];
-  }
+
+  int get_population(const string &name) override { return capitals[name]; }
 };
 
-struct SingletonRecordFinder
-{
-  int total_population(vector<string> names)
-  {
+struct SingletonRecordFinder {
+  int total_population(vector<string> names) {
     int result{0};
-    for (auto& name: names)
+    for (auto &name : names)
       result += SingletonDatabase::get().get_population(name);
     return result;
   }
 };
 
-struct ConfigurableRecordFinder
-{
-  Database& db;
+struct ConfigurableRecordFinder {
+  Database &db;
 
-  ConfigurableRecordFinder(Database& db): db(db) {}
+  ConfigurableRecordFinder(Database &db) : db(db) {}
 
-  int total_population(vector<string> names)
-  {
+  int total_population(vector<string> names) {
     int result{0};
-    for (auto& name: names)
+    for (auto &name : names)
       result += db.get_population(name);
     return result;
   }
 };
 
-
-
-int main()
-{
+int main() {
   // cant do this!
-  //auto db = SingletonDatabase::get();
+  // auto db = SingletonDatabase::get();
   string city = "Tokyo";
   int pop = SingletonDatabase::get().get_population(city);
   cout << city << " has a population of " << pop << endl;
@@ -118,6 +99,6 @@ int main()
   if (4 == cf.total_population(vector<string>{"alpha", "gamma"})) {
     cout << "Mock test passed" << endl;
   }
-  
+
   return 0;
 }

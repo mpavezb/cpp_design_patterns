@@ -1,12 +1,12 @@
-#include <iostream>
 #include "Person.hpp"
-#include "PersonBuilder.hpp"
 #include "PersonAddressBuilder.hpp"
+#include "PersonBuilder.hpp"
 #include "PersonJobBuilder.hpp"
+#include <iostream>
 
 using namespace std;
 
-/* 
+/*
 Overview
 --------
 
@@ -24,17 +24,18 @@ The implementation logic requires the creation of 4 builder classes:
 - PersonAddressBuilder: Creates address related fields.
 */
 
-int main()
-{
+int main() {
   // We use multiple builders and can change from one to another.
   Person p = Person::create()
-    .lives().at("Gudrunstrasse")
-            .with_postcode("80364")
-            .in("Munich")
-    .works().at("TTTech Auto")
-            .as_a("Project Engineer")
-            .earning(10e6);
-  
+                 .lives()
+                 .at("Gudrunstrasse")
+                 .with_postcode("80364")
+                 .in("Munich")
+                 .works()
+                 .at("TTTech Auto")
+                 .as_a("Project Engineer")
+                 .earning(10e6);
+
   cout << p << endl;
   return 0;
 }

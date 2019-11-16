@@ -1,40 +1,32 @@
-#include <string>
 #include <iostream>
+#include <string>
 #include <vector>
 
 using namespace std;
 
-struct GraphicObject
-{
+struct GraphicObject {
   virtual void draw() = 0;
 };
 
-struct Circle: GraphicObject
-{
-  void draw() override
-  {
-    cout << "Circle" << endl;
-  }
+struct Circle : GraphicObject {
+  void draw() override { cout << "Circle" << endl; }
 };
 
-struct Group: GraphicObject
-{
+struct Group : GraphicObject {
   string name;
-  vector<GraphicObject*> objects;
+  vector<GraphicObject *> objects;
 
-  Group(string name): name(name) {}
-  
-  void draw() override
-  {
+  Group(string name) : name(name) {}
+
+  void draw() override {
     cout << "Group " << name.c_str() << " contains { " << endl;
-    for (auto&& o: objects)
+    for (auto &&o : objects)
       o->draw();
     cout << "}" << endl;
   }
 };
-  
-int main()
-{
+
+int main() {
   Group root("root");
   Circle c1, c2;
   root.objects.push_back(&c1);

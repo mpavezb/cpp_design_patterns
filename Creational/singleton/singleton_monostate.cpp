@@ -1,6 +1,5 @@
 
-class Printer
-{
+class Printer {
   // resource is managed statically
   // different instances have access to the same resource.
   //
@@ -15,11 +14,8 @@ public:
 };
 int Printer::id = 0;
 
-
-int main()
-{
+int main() {
   Printer p1, p2;
   p1.set_id(0);
   int id = p2.get_id();
 }
-

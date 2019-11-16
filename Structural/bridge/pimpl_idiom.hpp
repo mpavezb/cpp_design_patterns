@@ -1,13 +1,12 @@
 #include <string>
 
-class Person
-{
+class Person {
 public:
   std::string name;
 
   // impl class hides the real implementation
   class PersonImpl;
-  PersonImpl* impl;
+  PersonImpl *impl;
 
   Person();
   ~Person();

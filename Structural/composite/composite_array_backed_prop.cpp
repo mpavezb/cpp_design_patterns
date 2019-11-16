@@ -1,15 +1,14 @@
-#include <iostream>
-#include <string>
-#include <array>
 #include <algorithm>
+#include <array>
+#include <iostream>
 #include <numeric>
+#include <string>
 
 using namespace std;
 
 // IF creature has many fields, making aggregation operations
 // on them will not scale well without a refactor.
-class Creature
-{
+class Creature {
 private:
   // int strength;
   // int agility;
@@ -37,31 +36,21 @@ public:
   int get_cunning() const { return abilities[cunning]; }
   void set_cunning(int value) { abilities[cunning] = value; }
 
-  int sum() const {
-    return accumulate(abilities.begin(), abilities.end(), 0);
-  }
+  int sum() const { return accumulate(abilities.begin(), abilities.end(), 0); }
 
-  double average() const {
-    return sum() / (double)count;
-  }
+  double average() const { return sum() / (double)count; }
 
-  int max() const {
-    return *max_element(abilities.begin(), abilities.end());
-  }
+  int max() const { return *max_element(abilities.begin(), abilities.end()); }
 };
 
-int main()
-{
+int main() {
   Creature orc;
   orc.set_strength(16);
   orc.set_agility(10);
   orc.set_spirit(5);
   orc.set_cunning(5);
 
-  cout << "Orc has a (" << orc.sum()
-       << ") stat points, with average stat (" << orc.average()
-       << ") and max value (" << orc.max()
-       << ")"
-       << endl;
+  cout << "Orc has a (" << orc.sum() << ") stat points, with average stat ("
+       << orc.average() << ") and max value (" << orc.max() << ")" << endl;
   return 0;
 }

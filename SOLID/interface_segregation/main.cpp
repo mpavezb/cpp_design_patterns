@@ -6,27 +6,25 @@ using namespace std;
 
 struct Document;
 
-/* This interface is OK if all IMachines really provide 
-   print, scan and fax methods. 
+/* This interface is OK if all IMachines really provide
+   print, scan and fax methods.
 
-   It forces implementers to create dummy methods when 
+   It forces implementers to create dummy methods when
    used on a simpler class.
 */
-struct BadIMachine
-{
-  virtual void print(Document& doc) = 0;
-  virtual void scan(Document& doc) = 0;
-  virtual void fax(Document& doc) = 0;
+struct BadIMachine {
+  virtual void print(Document &doc) = 0;
+  virtual void scan(Document &doc) = 0;
+  virtual void fax(Document &doc) = 0;
 };
 
-/* A Scanner should not implement an IMachine interface. 
+/* A Scanner should not implement an IMachine interface.
 - There are 2 options: Leave blank body or throw an exception.
 - It gives the user a wrong understanding of the class. It
   will think our scanner can also print.
 
 */
-struct BadScanner: BadIMachine
-{
+struct BadScanner : BadIMachine {
   void print(Document &doc) override {
     throw new logic_error("Not implemented.");
   }
@@ -40,26 +38,31 @@ struct BadScanner: BadIMachine
   }
 };
 
-
 /* Segregated Classes: IPrinter, IScanner and IFax. */
-struct IPrinter { virtual void print(Document& doc) = 0; };
-struct IScanner { virtual void scan(Document& doc)  = 0; };
-struct IFax     { virtual void fax(Document& doc)   = 0; };
+struct IPrinter {
+  virtual void print(Document &doc) = 0;
+};
+struct IScanner {
+  virtual void scan(Document &doc) = 0;
+};
+struct IFax {
+  virtual void fax(Document &doc) = 0;
+};
 
 /* Printer does not require to implement dummy methods. */
-struct Printer: IPrinter {
+struct Printer : IPrinter {
   void print(Document &doc) override {
     // OK
   }
 };
-struct Scanner: IScanner {
+struct Scanner : IScanner {
   void scan(Document &doc) override {
     // OK
   }
 };
 
 /* Complex Machine implements printer and scanner interfaces. */
-struct ComplexMachine: IPrinter, IScanner {
+struct ComplexMachine : IPrinter, IScanner {
   void print(Document &doc) override {
     // OK
   }
@@ -70,25 +73,16 @@ struct ComplexMachine: IPrinter, IScanner {
 };
 
 /* Now we can also use a decorator to create a complex machine. */
-struct DecoratedMachine: IPrinter, IScanner
-{
-  IPrinter& printer;
-  IScanner& scanner;
+struct DecoratedMachine : IPrinter, IScanner {
+  IPrinter &printer;
+  IScanner &scanner;
 
-  DecoratedMachine(IPrinter &printer, IScanner &scanner): printer(printer), scanner(scanner) {}
+  DecoratedMachine(IPrinter &printer, IScanner &scanner)
+      : printer(printer), scanner(scanner) {}
 
-  void print(Document &doc) override {
-    printer.print(doc);
-  }
+  void print(Document &doc) override { printer.print(doc); }
 
-  void scan(Document &doc) override {
-    scanner.scan(doc);
-  }
+  void scan(Document &doc) override { scanner.scan(doc); }
 };
 
-
-int main()
-{
-
-  return 0;
-}
+int main() { return 0; }

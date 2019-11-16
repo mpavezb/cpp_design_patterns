@@ -9,30 +9,23 @@ We want to force using the factory:
 - hide constructors.
 - put the factory inside the class.
 */
-class Point
-{
+class Point {
   float x, y;
-  Point(float x, float y): x(x), y(y) {}
+  Point(float x, float y) : x(x), y(y) {}
 
 public:
-  friend ostream &operator<<(ostream &os, const Point &point)
-  {
+  friend ostream &operator<<(ostream &os, const Point &point) {
     return os << "(x, y) = (" << point.x << ", " << point.y << ")";
   }
-  
+
 private:
   // Inner Class
-  class PointFactory
-  {
+  class PointFactory {
   public:
-    static Point NewCartesian(float x, float y)
-    {
-      return {x, y};
-    }
-    
-    static Point NewPolar(float rho, float theta)
-    {
-      return { rho*cosf(theta), rho*sinf(theta)};
+    static Point NewCartesian(float x, float y) { return {x, y}; }
+
+    static Point NewPolar(float rho, float theta) {
+      return {rho * cosf(theta), rho * sinf(theta)};
     }
   };
 
@@ -43,17 +36,15 @@ public:
   static PointFactory Factory;
 };
 
-
-int main()
-{
+int main() {
   // V1: if inner class is public.
-  //auto p1 = Point::PointFactory::NewCartesian(0, 1);
-  //auto p2 = Point::PointFactory::NewPolar(1, M_PI_4);
-  
+  // auto p1 = Point::PointFactory::NewCartesian(0, 1);
+  // auto p2 = Point::PointFactory::NewPolar(1, M_PI_4);
+
   // Using singleton
   auto p1 = Point::Factory.NewCartesian(0, 1);
   auto p2 = Point::Factory.NewPolar(1, M_PI_4);
-  
+
   cout << p1 << endl;
   cout << p2 << endl;
   return 0;
