@@ -16,6 +16,12 @@ struct Query {
       : creature_name(creature_name), argument(argument), result(result) {}
 };
 
+class Foo {
+  int a;
+  string b;
+  char c;
+};
+
 // User interacts with the game, which keeps all queries (Mediator pattern),
 struct Game {
   // game keeps all queries.
