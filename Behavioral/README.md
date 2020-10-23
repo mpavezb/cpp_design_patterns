@@ -2,7 +2,7 @@
 
 ## Overview
 
-- [Chain of Responsibility](#chain-of-responsibility): Sequence of handlers processing and event one after the other.
+- [Chain of Responsibility](#chain-of-responsibility): Sequence of handlers processing events one after the other.
 - [](#): .
 - [](#): .
 - [](#): .

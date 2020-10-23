@@ -63,6 +63,5 @@ They are tipically split into three categories. This is called *Gamma Categoriza
 ```bash
 mkdir -p build && cd build
 cmake .. -DCMAKE_INSTALL_PREFIX=../bin && make
-ctest --output-on-failure
 make install
 ```
