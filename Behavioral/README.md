@@ -17,8 +17,8 @@
 
 Example: GUI processing of user input: Button -> Button Container -> Window frame -> Window -> Desktop. 
 
-### Code Samples
+**(decentralized) Pointer Chain**: Linked List of commands. Each component of the chain works on the object and gives it to the next one, possibly breaking the chain. This is how this pattern used to be implemented in the past.
 
-**pointer_chain**: Linked List of commands. Each component of the chain works on the object and gives it to the next one, possibly breaking the chain. This is how this pattern used to be implemented in the past.
+**(centralized) Signal Chain**: Observer pattern is used to signal components who can participate in the chain. A central component keeps a list of the elements who could be influenced by the chain. The commands are propagated (sent) to the centralized server, and used by each element to traverse the chain and apply modifications when needed.
 
-**signal_chain**: Observer pattern is used to signal components who can participate in the chain.
+**Broker Chain:** Chain of Responsibility + Observer + Command Query Separation.
