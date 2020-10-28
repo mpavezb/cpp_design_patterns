@@ -70,7 +70,7 @@ template <typename R, typename... Args> struct Logger3<R(Args...)> {
 template <typename R, typename... Args>
 auto make_logger3(R (*func)(Args...), const string &name) {
   return Logger3<R(Args...)>(function<R(Args...)>(func), name);
-};
+}
 
 int main() {
   Logger([]() { cout << "Hello" << endl; }, "HelloFunction")();

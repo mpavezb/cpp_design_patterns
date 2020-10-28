@@ -14,6 +14,7 @@ struct User {
 
 ostream &operator<<(ostream &os, const User &user) {
   os << "User: " << user.first_name << " " << user.last_name;
+  return os;
 }
 
 int main() {

@@ -45,6 +45,7 @@ boost::bimap<key, string> User::names{};
 ostream &operator<<(ostream &os, const User &user) {
   os << "User: " << user.get_first_name() << " " << user.get_last_name() << " ("
      << user.first_name << ", " << user.last_name << ")";
+  return os;
 }
 
 int main() {

@@ -61,6 +61,8 @@ They are tipically split into three categories. This is called *Gamma Categoriza
 ## Building the code
 
 ```bash
+sudo apt install libboost-serialization-dev
+
 mkdir -p build && cd build
 cmake .. -DCMAKE_INSTALL_PREFIX=../bin && make
 make install

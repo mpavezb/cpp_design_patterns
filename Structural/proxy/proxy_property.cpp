@@ -30,5 +30,5 @@ int main() {
   Creature c;
   c.strength = 15;
   int x = c.agility;
-  return 0;
+  return x;
 }

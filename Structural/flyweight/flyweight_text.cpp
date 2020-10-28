@@ -1,3 +1,4 @@
+#include <cstddef>
 #include <cstring>
 #include <iostream>
 #include <string>
@@ -13,12 +14,12 @@ class FormattedText {
   bool *caps;
 
 public:
-  FormattedText(const string &plain_text) : plain_text(plain_text) {
+  explicit FormattedText(const string &plain_text) : plain_text(plain_text) {
     caps = new bool[plain_text.length()];
     memset(caps, 0, plain_text.length());
   }
 
-  ~FormattedText() { delete caps; }
+  virtual ~FormattedText() { delete caps; }
 
   void capitalize(int start, int end) {
     for (int i = start; i <= end; ++i) {
@@ -28,7 +29,7 @@ public:
 
   friend ostream &operator<<(ostream &os, const FormattedText &obj) {
     string s;
-    for (int i = 0; i < obj.plain_text.length(); ++i) {
+    for (size_t i = 0; i < obj.plain_text.length(); ++i) {
       char c = obj.plain_text[i];
       s += (obj.caps[i] ? toupper(c) : c);
     }
@@ -56,7 +57,7 @@ public:
 
   friend ostream &operator<<(ostream &os, const BetterFormattedText &obj) {
     string s;
-    for (int i = 0; i < obj.plain_text.length(); ++i) {
+    for (size_t i = 0; i < obj.plain_text.length(); ++i) {
       auto c = obj.plain_text[i];
       for (const auto &rng : obj.formatting) {
         if (rng.covers(i) && rng.capitalize) {

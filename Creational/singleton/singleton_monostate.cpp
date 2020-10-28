@@ -17,5 +17,5 @@ int Printer::id = 0;
 int main() {
   Printer p1, p2;
   p1.set_id(0);
-  int id = p2.get_id();
+  p2.get_id();
 }

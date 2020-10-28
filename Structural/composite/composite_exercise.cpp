@@ -37,10 +37,11 @@ public:
 
 int sum(const vector<ContainsIntegers *> items) {
   int total{0};
-  for (auto item : items)
+  for (auto item : items) {
     total += item->sum();
+  }
   return total;
-};
+}
 
 int main() {
   SingleValue single{1};
