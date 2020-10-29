@@ -5,7 +5,7 @@
 - [Chain of Responsibility](#chain-of-responsibility): Sequence of handlers processing events one after the other.
 - [Commmad](#command): Encapsulate commands into separate objects.
 - [Interpreter](#interpreter): Lexing and parsing structured data.
-- [Iterator](#iterator): TODO.
+- [Iterator](#iterator): Facilitates the traversal of data structures.
 - [Mediator](#mediator): TODO.
 - [Memento](#memento): TODO.
 - [Observer](#observer): TODO.
@@ -65,15 +65,19 @@ Examples: [lexer_parser](interpreter/lexer_parser.cpp).
 
 ## Iterator
 
-**TODO: overview**
+**A class that facilitates the traversal of a data structure. Keeps a reference to the current element and knows how to move to the next.**
+
 ![UML](iterator/UML.png)
 
+Considerations:
+- Can be used implicitly: range-based for, coroutines.
+
 Applications:
-- a
-- b
+- STL containers
 
 Examples:
-- [](iterator/)
+- [iterators_in_stl](iterator/iterators_in_stl.cpp)
+- [binary_tree_iterator](iterator/binary_tree_iterator.cpp)
 
 ## Mediator
 
