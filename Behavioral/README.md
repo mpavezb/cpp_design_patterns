@@ -78,6 +78,7 @@ Applications:
 Examples:
 - [iterators_in_stl](iterator/iterators_in_stl.cpp)
 - [binary_tree_iterator](iterator/binary_tree_iterator.cpp)
+- [binary_tree_iterator_coroutines](iterator/binary_tree_iterator_coroutines.cpp)
 
 ## Mediator
 

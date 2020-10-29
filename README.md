@@ -62,8 +62,9 @@ They are tipically split into three categories. This is called *Gamma Categoriza
 
 ```bash
 sudo apt install libboost-serialization-dev
+sudo apt install gcc-10 g++-10 # C++20
 
 mkdir -p build && cd build
-cmake .. -DCMAKE_INSTALL_PREFIX=../bin && make
+cmake -D CMAKE_C_COMPILER=gcc-10 -D CMAKE_CXX_COMPILER=g++-10 -DCMAKE_INSTALL_PREFIX=../bin .. && make
 make install
 ```
