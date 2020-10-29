@@ -70,15 +70,17 @@ Examples: [lexer_parser](interpreter/lexer_parser.cpp).
 ![UML](iterator/UML.png)
 
 Considerations:
-- Can be used implicitly: range-based for, coroutines.
-
-Applications:
-- STL containers
+- Iterator implementation usually requires operations: `operator!=()`, `operator++()`, and `operator*()`.
+- Iterators can be used implicitly: range-based for, coroutines.
+- Iterators are used a lot in STL containers.
+- Iterators can be implemented to own data structures (like a tree).
+- As the `operator++()` is called sporadically, so there is no way of preserving a recursion stack. This could lead to complex iterative implementations (e.g., on trees). The coroutine module (c++20) enables the use of the easy recursive approach through generator-yielding functions (yield allows keeping the recursion stack!).
 
 Examples:
 - [iterators_in_stl](iterator/iterators_in_stl.cpp)
 - [binary_tree_iterator](iterator/binary_tree_iterator.cpp)
 - [binary_tree_iterator_coroutines](iterator/binary_tree_iterator_coroutines.cpp)
+- [boost_iterator_facade](iterator/boost_iterator_facade.cpp)
 
 ## Mediator
 

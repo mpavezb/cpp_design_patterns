@@ -13,3 +13,7 @@ install(TARGETS binary_tree_iterator DESTINATION Bahavioral/${PROJECT_NAME})
 # add_executable(binary_tree_iterator_coroutines binary_tree_iterator_coroutines.cpp)
 # target_compile_options(binary_tree_iterator_coroutines PRIVATE -fcoroutines)
 # install(TARGETS binary_tree_iterator_coroutines DESTINATION Bahavioral/${PROJECT_NAME})
+
+# boost_iterator_facade
+add_executable(boost_iterator_facade boost_iterator_facade.cpp)
+install(TARGETS boost_iterator_facade DESTINATION Bahavioral/${PROJECT_NAME})
