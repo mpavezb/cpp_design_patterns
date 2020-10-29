@@ -1,6 +1,6 @@
 project(behavioral)
 add_subdirectory(chain_of_responsibility)
-#add_subdirectory(command)
+add_subdirectory(command)
 #add_subdirectory(interpreter)
 #add_subdirectory(iterator)
 #add_subdirectory(mediator)
