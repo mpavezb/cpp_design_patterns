@@ -3,10 +3,16 @@
 ## Overview
 
 - [Chain of Responsibility](#chain-of-responsibility): Sequence of handlers processing events one after the other.
-- [Commmad](#command): .
-- [](#): .
-- [](#): .
-- [](#): .
+- [Commmad](#command): Encapsulate commands into separate objects.
+- [Interpreter](#interpreter): Lexing and parsing structured data.
+- [Iterator](#iterator): TODO.
+- [Mediator](#mediator): TODO.
+- [Memento](#memento): TODO.
+- [Observer](#observer): TODO.
+- [State](#state): TODO.
+- [Strategy](#strategy): TODO.
+- [Template Method](#template-method): TODO.
+- [Visitor](#visitor): TODO.
 
 
 ## Chain of Responsibility
@@ -27,6 +33,8 @@ Example: GUI processing of user input: Button -> Button Container -> Window fram
 
 **Encapsulate all details of an operation in a separate object. The object must define methods to apply the command, and possibly to undo or rollback.**
 
+![UML](command/UML.png)
+
 Example: The encapsulated action can be used to implement features like: multi-level undo/redo, macro recording, undo/redo, and having different GUI buttons generate the same commands.
 
 **Command Query Separation**: This is not part of the Command Design Pattern. This is an architectural pattern allowing the separation of command and query concerns:
@@ -45,6 +53,8 @@ Examples:
 
 **A component that processes structured text data. Does so by turning it into separate lexical tokens (lexing) and then interpreting sequences of said tokens (parsing).**
 
+![UML](interpreter/UML.png)
+
 Applications:
 - Parsers for compilers, interpreters, IDEs, static analysis tools.
 - Matematical tools.
@@ -52,3 +62,100 @@ Applications:
 
 Examples: [lexer_parser](interpreter/lexer_parser.cpp).
 
+
+## Iterator
+
+**TODO: overview**
+![UML](iterator/UML.png)
+
+Applications:
+- a
+- b
+
+Examples:
+- [](iterator/)
+
+## Mediator
+
+**TODO: overview**
+![UML](#mediator/UML.png)
+
+Applications:
+- a
+- b
+
+Examples:
+- [](mediator/)
+
+## Memento
+
+**TODO: overview**
+![UML](#memento/UML.png)
+
+Applications:
+- a
+- b
+
+Examples:
+- [](memento/)
+
+## observer
+
+**TODO: overview**
+![UML](#observer/UML.png)
+
+Applications:
+- a
+- b
+
+Examples:
+- [](observer/)
+
+## State
+
+**TODO: overview**
+![UML](#state/UML.png)
+
+Applications:
+- a
+- b
+
+Examples:
+- [](state/)
+
+## Strategy
+
+**TODO: overview**
+![UML](#strategy/UML.png)
+
+Applications:
+- a
+- b
+
+Examples:
+- [](strategy/)
+
+## Template Method
+
+**TODO: overview**
+![UML](#template/UML.png)
+
+Applications:
+- a
+- b
+
+Examples:
+- [](template/)
+
+## Visitor
+
+**TODO: overview**
+
+![UML](#visitor/UML.png)
+
+Applications:
+- a
+- b
+
+Examples:
+- [](visitor/)
