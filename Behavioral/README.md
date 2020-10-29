@@ -40,3 +40,15 @@ Examples:
 - [command](command/command.cpp)
 - [command undo](command/command_undo.cpp)
 - [composite command (macro)](command/composite_command.cpp)
+
+## Interpreter
+
+**A component that processes structured text data. Does so by turning it into separate lexical tokens (lexing) and then interpreting sequences of said tokens (parsing).**
+
+Applications:
+- Parsers for compilers, interpreters, IDEs, static analysis tools.
+- Matematical tools.
+- Regular expressions.
+
+Examples: [lexer_parser](interpreter/lexer_parser.cpp).
+
