@@ -84,15 +84,17 @@ Examples:
 
 ## Mediator
 
-**TODO: overview**
+**Facilitates communication between components, by letting them be unaware of their presence or absence in the system.**
+
 ![UML](#mediator/UML.png)
 
-Applications:
-- a
-- b
+Motivation:
+- Components may go in/out of the system at any time. e.g., chat room, mmorpg.
+- It makes no sense to have direct references between participants.
+- A mediator component is used to mediate the connections.
 
 Examples:
-- [](mediator/)
+- [chat room](mediator/main.cpp)
 
 ## Memento
 
