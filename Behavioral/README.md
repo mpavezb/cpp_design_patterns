@@ -95,6 +95,7 @@ Motivation:
 
 Examples:
 - [chat room](mediator/main.cpp)
+- [soccer_event_broker](mediator/soccer_event_broker.cpp)
 
 ## Memento
 
