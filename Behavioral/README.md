@@ -6,7 +6,7 @@
 - [Commmad](#command): Encapsulate commands into separate objects.
 - [Interpreter](#interpreter): Lexing and parsing structured data.
 - [Iterator](#iterator): Facilitates the traversal of data structures.
-- [Mediator](#mediator): TODO.
+- [Mediator](#mediator): Centralized communication between objects.
 - [Memento](#memento): TODO.
 - [Observer](#observer): TODO.
 - [State](#state): TODO.
