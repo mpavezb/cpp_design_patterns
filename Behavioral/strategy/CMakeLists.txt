@@ -1,5 +1,9 @@
-project(XXX)
+project(strategy)
 
-# XXX
-add_executable(XXX XXX.cpp)
-install(TARGETS XXX DESTINATION Bahavioral/${PROJECT_NAME})
+# dynamic_strategy
+add_executable(dynamic_strategy dynamic_strategy.cpp)
+install(TARGETS dynamic_strategy DESTINATION Bahavioral/${PROJECT_NAME})
+
+# static_strategy
+add_executable(static_strategy static_strategy.cpp)
+install(TARGETS static_strategy DESTINATION Bahavioral/${PROJECT_NAME})

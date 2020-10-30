@@ -10,7 +10,7 @@
 - [Memento](#memento): Keep a snapshot of an object's state to return later.
 - [Observer](#observer): Publish and subscribe to messages.
 - [State](#state): Control behavior throgh Finite State Machine.
-- [Strategy](#strategy): TODO.
+- [Strategy](#strategy): Select exact behavior of a system at runtime or compile-time.
 - [Template Method](#template-method): TODO.
 - [Visitor](#visitor): TODO.
 
@@ -177,15 +177,20 @@ Examples:
 
 ## Strategy
 
-**TODO: overview**
+**Select exact behavior of a system at runtime or compile-time.**
 ![UML](strategy/UML.png)
 
-Applications:
-- a
-- b
+Motivation:
+- Abstract component behavior into general (e.g., making a hot beverage) and specific (e.g., put teabag) algorithms. The general component can be reused to support more behaviors, while the specific algorithm is provided by the behavior-specific strategy.
+
+Considerations:
+- Also known as a *policy*.
+- The dynamic approach is flexible and based on dynamic polymorphism.
+- The static approach is not flexible and based on templates, but avoids pointers and runtime overhead. 
 
 Examples:
-- [](strategy/)
+- [dynamic strategy](strategy/dynamic_strategy.cpp)
+- [static strategy](strategy/static_strategy.cpp)
 
 ## Template Method
 
