@@ -12,7 +12,7 @@
 - [State](#state): Control behavior throgh Finite State Machine.
 - [Strategy](#strategy): Select exact behavior of a system at runtime or compile-time (specialization based on composition).
 - [Template Method](#template-method): Define skeleton of an algorithm, with specific implementations in subclasses (specialization based on inheritance).
-- [Visitor](#visitor): TODO.
+- [Visitor](#visitor): Tool for structure traversal that avoids modifying the whole hierarchy.
 
 
 ## Chain of Responsibility
@@ -170,7 +170,7 @@ Example: The encapsulated action can be used to implement features like: multi-l
   - guard conditions to enable/disable a transition.
   - default actions when no transitions are found for an event.
 
-Examples:
+**Examples**:
 - [old_school_fsm](state/old_school_fsm.cpp)
 - [handmade_fsm](state/handmade_fsm.cpp)
 - [boost meta sm](state/boost_msm.cpp)
@@ -180,18 +180,18 @@ Examples:
 **Select exact behavior of a system at runtime or compile-time.**
 ![UML](strategy/UML.png)
 
-Motivation:
+**Motivation**:
 - Abstract component behavior into general (e.g., making a hot beverage) and specific (e.g., put teabag) algorithms. The general component can be reused to support more behaviors, while the specific algorithm is provided by the behavior-specific strategy.
 - Specialization is done through composition.
   - High-level algorithm uses an interface.
   - Concrete implementations implement the interface.
 
-Considerations:
+**Considerations**:
 - Also known as a *policy*.
 - The dynamic approach is flexible and based on dynamic polymorphism.
 - The static approach is not flexible and based on templates, but avoids pointers and runtime overhead. 
 
-Examples:
+**Examples**:
 - [dynamic strategy](strategy/dynamic_strategy.cpp)
 - [static strategy](strategy/static_strategy.cpp)
 
@@ -200,25 +200,38 @@ Examples:
 **Defines the skeleton of an algorithm, with concrete implementations in subclasses.**
 ![UML](template/UML.png)
 
-Motivation:
+**Motivation**:
 - Algorithms can be decomposed into common and specific components.
 - Specialization is done through inheritance.
   - Overall algorithm makes use of an abstract member.
   - Inheritors override the key abstract members.
   - Parent template method is invoked.
 
-Examples:
+**Examples**:
 - [template method](template/template_method.cpp)
 
 ## Visitor
 
-**TODO: overview**
+**A component (visitor) is allowed to traverse the inheritance hierarchy. Implemented by propagating a single visit() method through the hierarchy.**
 
 ![UML](visitor/UML.png)
 
-Applications:
-- a
-- b
+**Motivation**:
+- Need to define a new operation on an entire class hierarchy.
+- Avoids breaking the open-closed principle: Do not want to open the hierarchy and modify every class. 
+- Avoids breaking the single responsibility principle: Brand new concern should be kept separately.
+- Trade-Off: Need access to the non-common aspects of classes in the hierarchy.
 
-Examples:
-- [](visitor/)
+**Considerations**:
+- Avoid using the reflective approach (type-checking):
+  - Forces using multiple if-else statements + dynamic_cast.
+  - Dynamic cast each component is hard and not optimal.
+  - New components may not be added to the external tool!.
+- Component specific concerns are dealt with using an associated external component.
+- When implementing double-dispatch prefer the `accept()/visit()` convention for names.
+- The double dispatch implementation is ugly, but is a way to deal with the limitations of statically typed languages in a clean manner: Dynamically typed languages allow using the reflective approach, avoiding their drawbacks, as the overloads are selected at runtime.
+
+**Examples**:
+- [intrusive visitor](visitor/intrusive_visitor.cpp) TERRIBLE.
+- [reflective visitor](visitor/reflective_visitor.cpp) NOT SO GOOD. But better for dynamically typed languages.
+- [double_dispatch visitor](visitor/double_dispatch_visitor.cpp) GOOD!. For statically typed languages.
