@@ -86,7 +86,7 @@ Examples:
 
 **Facilitates communication between components, by letting them be unaware of their presence or absence in the system.**
 
-![UML](#mediator/UML.png)
+![UML](mediator/UML.png)
 
 Motivation:
 - Components may go in/out of the system at any time. e.g., chat room, mmorpg.
