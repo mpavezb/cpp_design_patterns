@@ -162,6 +162,14 @@ Example: The encapsulated action can be used to implement features like: multi-l
   - Explicit: FSM has explicit control of the system, quering the user about actions.
   - Responsive: FSM subscribes to events out of their control..
 
+**Considerations**:
+- Dont rely on the *old school fsm* implementation (see below). Use instead the handmade or the boost msm library.
+- Complex FSM provide functions to define:
+  - entry/exit behaviors for states.
+  - actions when a particular event causes a transition.
+  - guard conditions to enable/disable a transition.
+  - default actions when no transitions are found for an event.
+
 Examples:
 - [old_school_fsm](state/old_school_fsm.cpp)
 - [handmade_fsm](state/handmade_fsm.cpp)
