@@ -1,4 +1,5 @@
 #include <boost/bimap.hpp>
+#include <boost/container/allocator.hpp>
 #include <iostream>
 #include <string>
 
@@ -10,7 +11,7 @@ typedef uint16_t key;
 
 struct User {
 private:
-  static boost::bimap<key, string> names;
+  static boost::bimap<key, string, boost::container::allocator<string>> names;
   static key seed;
 
 public:
@@ -40,7 +41,7 @@ private:
 };
 
 key User::seed{0};
-boost::bimap<key, string> User::names{};
+boost::bimap<key, string, boost::container::allocator<string>> User::names{};
 
 ostream &operator<<(ostream &os, const User &user) {
   os << "User: " << user.get_first_name() << " " << user.get_last_name() << " ("

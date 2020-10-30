@@ -1,11 +1,11 @@
 project(flyweight)
 
 find_package(Boost REQUIRED)
-
 include_directories(${Boost_INCLUDE_DIRS})
 
 # # flyweight_handmade
 # add_executable(flyweight_handmade flyweight_handmade.cpp)
+# target_link_libraries(flyweight_handmade ${Boost_LIBRARIES})
 # install(TARGETS flyweight_handmade DESTINATION Structural/${PROJECT_NAME})
 
 # flyweight_boost
