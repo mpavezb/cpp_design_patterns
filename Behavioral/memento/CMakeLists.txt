@@ -1,5 +1,9 @@
-project(XXX)
+project(memento)
 
-# XXX
-add_executable(XXX XXX.cpp)
-install(TARGETS XXX DESTINATION Bahavioral/${PROJECT_NAME})
+# memento
+add_executable(memento memento.cpp)
+install(TARGETS memento DESTINATION Bahavioral/${PROJECT_NAME})
+
+# undo_redo
+add_executable(undo_redo undo_redo.cpp)
+install(TARGETS undo_redo DESTINATION Bahavioral/${PROJECT_NAME})

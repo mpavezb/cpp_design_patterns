@@ -7,7 +7,7 @@
 - [Interpreter](#interpreter): Lexing and parsing structured data.
 - [Iterator](#iterator): Facilitates the traversal of data structures.
 - [Mediator](#mediator): Centralized communication between objects.
-- [Memento](#memento): TODO.
+- [Memento](#memento): Keep a snapshot of an object's state to return later.
 - [Observer](#observer): TODO.
 - [State](#state): TODO.
 - [Strategy](#strategy): TODO.
@@ -82,6 +82,7 @@ Examples:
 - [binary_tree_iterator_coroutines](iterator/binary_tree_iterator_coroutines.cpp)
 - [boost_iterator_facade](iterator/boost_iterator_facade.cpp)
 
+
 ## Mediator
 
 **Facilitates communication between components, by letting them be unaware of their presence or absence in the system.**
@@ -93,26 +94,41 @@ Motivation:
 - It makes no sense to have direct references between participants.
 - A mediator component is used to mediate the connections.
 
+Considerations:
+- Mediator is created and usually injected into every component.
+- Mediator is usually a singleton.
+- Mediator provides bidirectional communication.
+
 Examples:
 - [chat room](mediator/main.cpp)
 - [soccer_event_broker](mediator/soccer_event_broker.cpp)
 
+
 ## Memento
 
-**TODO: overview**
-![UML](#memento/UML.png)
+**Keep a snapshot of an object's state to return later.**
 
-Applications:
-- a
-- b
+![UML](memento/UML.png)
+
+Motivation:
+- The command pattern allows undo/redo using commit-semantics, storing every single change!, while the memento simply saves snapshots of the system.
+
+Considerations:
+- A memento is a token/handler representing the system snapshot, which allows to rollback to that version. 
+- This token may or may not contain system information. It may be just a hash returned by the API.
+- The memento should be an inmutable object to avoid reverting to invalid states.
+- Storing mementos allows using undo/redo.
+- An alternative implementation could implement the "snapshot save" in the constructor of the token, and the "restore" in its destructor.
 
 Examples:
-- [](memento/)
+- [memento snapshot](memento/memento.cpp).
+- [memento with undo redo](memento/undo_redo.cpp).
 
-## observer
 
-**TODO: overview**
-![UML](#observer/UML.png)
+## Observer
+
+****
+![UML](observer/UML.png)
 
 Applications:
 - a
@@ -124,7 +140,7 @@ Examples:
 ## State
 
 **TODO: overview**
-![UML](#state/UML.png)
+![UML](state/UML.png)
 
 Applications:
 - a
@@ -136,7 +152,7 @@ Examples:
 ## Strategy
 
 **TODO: overview**
-![UML](#strategy/UML.png)
+![UML](strategy/UML.png)
 
 Applications:
 - a
@@ -148,7 +164,7 @@ Examples:
 ## Template Method
 
 **TODO: overview**
-![UML](#template/UML.png)
+![UML](template/UML.png)
 
 Applications:
 - a
@@ -161,7 +177,7 @@ Examples:
 
 **TODO: overview**
 
-![UML](#visitor/UML.png)
+![UML](visitor/UML.png)
 
 Applications:
 - a
