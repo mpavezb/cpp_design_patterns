@@ -1,5 +1,13 @@
-project(XXX)
+project(observer)
 
-# XXX
-add_executable(XXX XXX.cpp)
-install(TARGETS XXX DESTINATION Bahavioral/${PROJECT_NAME})
+# raw_observer
+add_executable(raw_observer raw_observer.cpp)
+install(TARGETS raw_observer DESTINATION Bahavioral/${PROJECT_NAME})
+
+# boost_observer
+add_executable(boost_observer boost_observer.cpp)
+install(TARGETS boost_observer DESTINATION Bahavioral/${PROJECT_NAME})
+
+# thread_safety
+add_executable(thread_safety thread_safety.cpp)
+install(TARGETS thread_safety DESTINATION Bahavioral/${PROJECT_NAME})
