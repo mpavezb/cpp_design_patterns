@@ -9,7 +9,7 @@
 - [Mediator](#mediator): Centralized communication between objects.
 - [Memento](#memento): Keep a snapshot of an object's state to return later.
 - [Observer](#observer): Publish and subscribe to messages.
-- [State](#state): TODO.
+- [State](#state): Control behavior throgh Finite State Machine.
 - [Strategy](#strategy): TODO.
 - [Template Method](#template-method): TODO.
 - [Visitor](#visitor): TODO.
@@ -153,15 +153,19 @@ Example: The encapsulated action can be used to implement features like: multi-l
 
 ## State
 
-**TODO: overview**
+**Object behavior is determined by its state. Transitions between states are triggered explicitely or in response to events.**
 ![UML](state/UML.png)
 
-Applications:
-- a
-- b
+**Motivation**:
+- FSM: Finite State Machines.
+- Changes in the state of the system can be explicit or in response to an event.
+  - Explicit: FSM has explicit control of the system, quering the user about actions.
+  - Responsive: FSM subscribes to events out of their control..
 
 Examples:
-- [](state/)
+- [old_school_fsm](state/old_school_fsm.cpp)
+- [handmade_fsm](state/handmade_fsm.cpp)
+- [boost meta sm](state/boost_msm.cpp)
 
 ## Strategy
 
