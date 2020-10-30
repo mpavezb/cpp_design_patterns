@@ -10,8 +10,8 @@
 - [Memento](#memento): Keep a snapshot of an object's state to return later.
 - [Observer](#observer): Publish and subscribe to messages.
 - [State](#state): Control behavior throgh Finite State Machine.
-- [Strategy](#strategy): Select exact behavior of a system at runtime or compile-time.
-- [Template Method](#template-method): TODO.
+- [Strategy](#strategy): Select exact behavior of a system at runtime or compile-time (specialization based on composition).
+- [Template Method](#template-method): Define skeleton of an algorithm, with specific implementations in subclasses (specialization based on inheritance).
 - [Visitor](#visitor): TODO.
 
 
@@ -182,6 +182,9 @@ Examples:
 
 Motivation:
 - Abstract component behavior into general (e.g., making a hot beverage) and specific (e.g., put teabag) algorithms. The general component can be reused to support more behaviors, while the specific algorithm is provided by the behavior-specific strategy.
+- Specialization is done through composition.
+  - High-level algorithm uses an interface.
+  - Concrete implementations implement the interface.
 
 Considerations:
 - Also known as a *policy*.
@@ -194,15 +197,18 @@ Examples:
 
 ## Template Method
 
-**TODO: overview**
+**Defines the skeleton of an algorithm, with concrete implementations in subclasses.**
 ![UML](template/UML.png)
 
-Applications:
-- a
-- b
+Motivation:
+- Algorithms can be decomposed into common and specific components.
+- Specialization is done through inheritance.
+  - Overall algorithm makes use of an abstract member.
+  - Inheritors override the key abstract members.
+  - Parent template method is invoked.
 
 Examples:
-- [](template/)
+- [template method](template/template_method.cpp)
 
 ## Visitor
 
