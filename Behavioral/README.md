@@ -222,16 +222,30 @@ Example: The encapsulated action can be used to implement features like: multi-l
 - Avoids breaking the single responsibility principle: Brand new concern should be kept separately.
 - Trade-Off: Need access to the non-common aspects of classes in the hierarchy.
 
-**Considerations**:
-- Avoid using the reflective approach (type-checking):
-  - Forces using multiple if-else statements + dynamic_cast.
+**Reflective Approach**: Avoid using it:
+  - Forces type-checking, multiple if-else statements, and dynamic_cast.
   - Dynamic cast each component is hard and not optimal.
   - New components may not be added to the external tool!.
-- Component specific concerns are dealt with using an associated external component.
+  - Dynamically typed languages allow using the reflective approach, avoiding its drawbacks, as the overloads are selected at runtime.
+
+**Double Dispatch Approach**:
+- The double dispatch implementation is ugly, but is **the only way** to deal with the limitations of statically typed languages in a clean manner.
 - When implementing double-dispatch prefer the `accept()/visit()` convention for names.
-- The double dispatch implementation is ugly, but is a way to deal with the limitations of statically typed languages in a clean manner: Dynamically typed languages allow using the reflective approach, avoiding their drawbacks, as the overloads are selected at runtime.
+
+**Cyclic vs Acyclic Visitor**:
+- Cyclic: Based on function overloading, works only on a stable hierarchy.
+- Acyclic visitor: based on RTTI (*run-time type information*), no hierarchy limitations, but slower.
+
+**Multimethods - Multiple Dispatch**:
+- When requiring multiple arguments for the `visit()` call, the double dispatch is not as easy as before.
+- The example uses CRTP and a map between al possible overloads. Its gets complex easily, but is a way to solve multiple dispatch problems.
+- See also: https://www.stroustrup.com/multimethods.pdf
 
 **Examples**:
-- [intrusive visitor](visitor/intrusive_visitor.cpp) TERRIBLE.
-- [reflective visitor](visitor/reflective_visitor.cpp) NOT SO GOOD. But better for dynamically typed languages.
-- [double_dispatch visitor](visitor/double_dispatch_visitor.cpp) GOOD!. For statically typed languages.
+- [intrusive visitor](visitor/intrusive_visitor.cpp): TERRIBLE.
+- [reflective visitor](visitor/reflective_visitor.cpp): NOT SO GOOD. But better for dynamically typed languages.
+- [double_dispatch visitor](visitor/double_dispatch_visitor.cpp): GOOD!. For statically typed languages.
+- [acyclic visitor](visitor/acyclic_visitor.cpp): GOOD when hierarchy is not fixed.
+- [multimethod visitor](visitor/multimethod_visitor.cpp).
+- [std variant visitor](visitor/std_variant_visitor.cpp).
+
