@@ -37,6 +37,9 @@ Helps preventing a entity explosion on a *cartesian product*. Example: An object
 
 **Pimpl Idiom**: This usage of the pattern helps us hidding implementation details we do not want to expose. As a side feature, as the implementation and internal signatures are hidden, this idiom allows us to change the internal implementation without touching the consumer headers. This way, we do not introduce _binary incompatibility_ and compilation times are faster.
 
+**Examples**:
+- [pimpl idiom](bridge/pimpl_idiom.cpp)
+- [pimpl library](bridge/pimpl_library.cpp)
 
 ## Composite
 
